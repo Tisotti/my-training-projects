@@ -1,0 +1,193 @@
+:root {
+  --timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+body {
+  max-width: 1200px;
+}
+
+/* кнопки-ссылки + подчеркивание с анимацией начало */
+.header {
+  outline: 1px solid green;
+  margin-top: 20px;
+
+  background-color: aqua;
+}
+
+.header-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.header-item {
+}
+
+.header-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header-link {
+  outline: 1px solid tomato;
+
+  position: relative;
+
+  display: block;
+
+  padding: 15px 5px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+/* вариант 1 - базовая анимация - появляется-исчезает
+
+.header-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 5px;
+
+  background-color: aquamarine;
+
+  opacity: 0;
+
+  transition: opacity 750ms var(--timing-function);
+}
+
+.header-link:hover::after {
+  opacity: 1;
+} */
+
+/* вариант 2 - анимация ширины 
+.header-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 0%;
+  height: 5px;
+
+  background-color: aquamarine;
+
+  transition: width 750ms var(--timing-function);
+}
+
+.header-link:hover::after {
+  width: 100% ; */
+
+/* вариант 3 - анимация на трансформацию и цвет линии */
+.header-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 5px;
+
+  transform: scaleX(0.5);
+
+  background-color: violet;
+
+  transition: transform 750ms var(--timing-function),
+    background-color 750ms var(--timing-function);
+}
+
+.header-link:hover::after {
+  transform: scaleX(100%);
+  background-color: blue;
+}
+
+/* кнопки-ссылки + подчеркивание с анимацией конец  */
+
+/* main  */
+.main {
+  outline: 1px solid salmon;
+}
+
+/* <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая начало -->/ */
+.btn {
+  display: inline-flex;
+  border: none;
+  align-items: center;
+
+  position: relative;
+
+  margin: 20px;
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  background-color: pink;
+
+  cursor: pointer;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: 3ms;
+
+  overflow: hidden;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: aquamarine;
+}
+
+.btn::after {
+  content: "";
+
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+
+  /* background-color: red; */
+  background-image: url(/images/11066_53304f06eaeaf1dfba318bfdd5b5b1d8.jpg);
+  background-position: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  transform: translatey(-30px);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 59.5px;
+
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+
+  transform: translateY(calc(-50% + 50px));
+
+  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  background-image: url(/images/25555a1593b3f3adac5fbbbbe2f5c1a2.jpeg);
+  background-position: 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* background-color: blue; */
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  transform: translateY(50%);
+}
+/* <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая конец  -->/ */
