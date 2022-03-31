@@ -10,8 +10,6 @@ body {
 .header {
   outline: 1px solid green;
   margin-top: 20px;
-
-  background-color: aqua;
 }
 
 .header-list {
@@ -38,9 +36,9 @@ body {
   border-radius: 3px;
 }
 
-/* вариант 1 - базовая анимация - появляется-исчезает
+/* вариант 1 - базовая анимация - появляется-исчезает */
 
-.header-link::after {
+.header-link.link-one::after {
   content: "";
 
   position: absolute;
@@ -51,19 +49,19 @@ body {
   width: 100%;
   height: 5px;
 
-  background-color: aquamarine;
+  background-color: salmon;
 
   opacity: 0;
 
-  transition: opacity 750ms var(--timing-function);
+  transition: opacity 1000ms var(--timing-function);
 }
 
-.header-link:hover::after {
+.header-link.link-one:hover::after {
   opacity: 1;
-} */
+}
 
-/* вариант 2 - анимация ширины 
-.header-link::after {
+/* вариант 2 - анимация ширины  */
+.header-link.link-two::after {
   content: "";
 
   position: absolute;
@@ -79,11 +77,12 @@ body {
   transition: width 750ms var(--timing-function);
 }
 
-.header-link:hover::after {
-  width: 100% ; */
+.header-link.link-two:hover::after {
+  width: 100%;
+}
 
 /* вариант 3 - анимация на трансформацию и цвет линии */
-.header-link::after {
+.header-link.link-three::after {
   content: "";
 
   position: absolute;
@@ -94,7 +93,7 @@ body {
   width: 100%;
   height: 5px;
 
-  transform: scaleX(0.5);
+  transform: scaleX(0.01);
 
   background-color: violet;
 
@@ -102,7 +101,7 @@ body {
     background-color 750ms var(--timing-function);
 }
 
-.header-link:hover::after {
+.header-link.link-three:hover::after {
   transform: scaleX(100%);
   background-color: blue;
 }
@@ -170,7 +169,7 @@ body {
   bottom: 50%;
   left: 59.5px;
 
-  margin-left: 10px;
+  margin-left: 2px;
   width: 20px;
   height: 20px;
 
