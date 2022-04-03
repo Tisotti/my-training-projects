@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- форма -->
+    <form class="jc-speaker-form">
+      <label for="name">Ім'я</label>
+      <input type="text" name="user-name" />
+    </form>
+    <!-- форма конец -->
+
     <header class="header">
       <ul class="header-list">
         <li class="header-item">
@@ -26,8 +33,24 @@
 
     <main class="main">
       <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая -->
-      <button class="btn">button</button>
+      <section class="main-btn">
+        <button class="btn">button</button>
+      </section>
+
+      <!-- модалка начало -->
+      <section class="main-modal">
+        <button class="modal-open" data-modal-open>замовити</button>
+        <div class="backdrobe is-hidden" data-modal>
+          <div class="modal">
+            <button class="modal-close" data-modal-close>close</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- модалка конец -->
     </main>
     <footer class="footer"></footer>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

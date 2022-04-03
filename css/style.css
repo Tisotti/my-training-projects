@@ -114,6 +114,10 @@ body {
 }
 
 /* <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая начало -->/ */
+.main-btn {
+  background-color: rgb(215, 204, 226);
+}
+
 .btn {
   display: inline-flex;
   border: none;
@@ -190,3 +194,90 @@ body {
   transform: translateY(50%);
 }
 /* <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая конец  -->/ */
+
+/* модалка начало */
+.main-modal {
+  background-color: rgb(246, 212, 212);
+}
+
+.modal-open {
+  display: block;
+
+  padding: 3px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.85;
+  letter-spacing: 0.06em;
+  
+  color: black;
+  background-color: greenyellow;
+  cursor: pointer;
+  
+  border-radius: 4px;
+  border: groove;
+  
+  min-width: 100px;
+  text-align: center;
+}
+
+.backdrobe {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(145, 207, 203, 20%);
+
+  opacity: 1;
+
+  transition: opacity 250ms var(--cubic),
+  transform 250ms var(--cubic);
+}
+
+.backdrobe.is-hidden {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.modal {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+width: 350px;
+height: 450px;
+
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+0px 1px 1px rgba(0, 0, 0, 0.14),
+0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+background-color: floralwhite;
+
+}
+
+.modal-close {
+  
+    width: 50px;
+    height: 30px;
+  
+    margin-left: 292px;
+    margin-top: 8px;
+  
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  
+    background-color: var(--primary-white-color);
+  
+    cursor: pointer;
+  
+}
+
+/* модалка конец */
