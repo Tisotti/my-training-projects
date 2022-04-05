@@ -3,20 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- название -->
     <title>My project</title>
     <!-- нормализация css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- форма -->
-    <form class="jc-speaker-form">
-      <label for="name">Ім'я</label>
-      <input type="text" name="user-name" />
-    </form>
-    <!-- форма конец -->
-
+    <!-- линки на хедере начало -->
     <header class="header">
       <ul class="header-list">
         <li class="header-item">
@@ -30,7 +24,7 @@
         </li>
       </ul>
     </header>
-
+    <!-- линки на хэдере конец -->
     <main class="main">
       <!-- кнопка на которой есть псевдокласс и свг уезжает вверх а на ее место приезжвет другая -->
       <section class="main-btn">
@@ -43,11 +37,92 @@
         <div class="backdrobe is-hidden" data-modal>
           <div class="modal">
             <button class="modal-close" data-modal-close>close</button>
+            <!-- форма -->
+            <form action="">
+              <!-- ім'я  -->
+              <label for="name" avtofocus>
+                Name
+                <input type="text" id="name" />
+              </label>
+              <!-- пароль -->
+              <label for="passvord">
+                Passvord
+                <input
+                  type="password"
+                  id="passvord"
+                  minlength="5"
+                  maxlength="10"
+                />
+              </label>
+              <!-- чекбокс -->
+              <div class="checkbox">
+                <label for="">
+                  <span class="span-check">checkbox 1</span>
+                  <input
+                    type="checkbox"
+                    name="checkbox"
+                    value="checkbox-1"
+                    checked
+                  />
+                </label>
+
+                <label for="">
+                  checkbox 2
+                  <input type="checkbox" name="checkbox" value="checkbox-1" />
+                </label>
+
+                <label for="">
+                  checkbox 3
+                  <input type="checkbox" name="checkbox" value="checkbox-1" />
+                </label>
+              </div>
+
+              <!-- вік -->
+              <label for="">
+                вік
+                <input
+                  type="number"
+                  name="age"
+                  value="10"
+                  step="1"
+                  min="10"
+                  max="1200"
+                  id=""
+                />
+              </label>
+              <!-- час -->
+              <label for="">
+                дата
+                <input type="date" min="1990-01-02" max="2022-05-01" />
+              </label>
+
+              <label for="">
+                час
+                <input type="time" />
+              </label>
+
+              <button class="form-btn" type="submit">Ввести</button>
+            </form>
           </div>
         </div>
       </section>
 
       <!-- модалка конец -->
+
+      <!-- форма начало -->
+      <!-- <form class="jc-speaker-form"> -->
+      <!-- окно для имени -->
+      <!-- <label for="name">Ім'я </label>
+      <input type="text" name="name" id="name" /> -->
+      <!-- окно для имени -->
+      <!-- <label for="name" avtofocus>Ім'я_2 </label>
+      <input type="text" name="name" id="name" /> -->
+      <!-- окно для телефона -->
+      <!-- <label for="tel">Телефон</label>
+      <Input type="text" name="tel" id="tel"></Input> -->
+      <!-- <button class="form-btn" type="submit">Ввести</button>
+      </form> -->
+      <!-- форма конец -->
     </main>
     <footer class="footer"></footer>
 
