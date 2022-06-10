@@ -17,8 +17,8 @@ body {
   list-style-type: none;
 }
 
-.header-item {
-}
+/* .header-item {
+} */
 
 .header-item:not(:last-child) {
   margin-right: 10px;
@@ -251,8 +251,10 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 
-width: 350px;
-height: 450px;
+min-width: 350px;
+min-height: 450px;
+
+padding: 10px;
 
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -263,21 +265,160 @@ background-color: floralwhite;
 }
 
 .modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
   
-    width: 50px;
-    height: 30px;
+  width: 50px;
+  height: 30px;
   
-    margin-left: 292px;
-    margin-top: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+  background-color: var(--primary-white-color);
   
-    background-color: var(--primary-white-color);
+  cursor: pointer;
+}
+
+.modal-titel {
+  margin: 5px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+
+text-align: center;
+ 
+  color: #212121;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  margin: 0;
+  padding: 6px 10px;
+
+  border: 1px solid rgba(67, 3, 59, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-size: 16px;
+}
+
+.form-field input::placeholder {
+  color: pink;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+.modal-subtitel {
+  margin-top: 0;
+  margin-bottom: 10px;
   
-    cursor: pointer;
-  
+  text-align: center;
+}
+
+.topic-options,
+.expirience-options {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* .topic-options input[checkbox] {
+} */
+
+.topic-options label {
+  font-size: 16px;
+    margin-left: 10px;
+}
+
+.topic-options li {
+  display: flex;
+  align-items: center;
+}
+
+/* .expirience-options {
+} */
+
+.date-label {
+  text-align: center;
+}
+
+.form .date {
+  background-color: rgb(246, 179, 179);
+  color: aliceblue;
+
+    border-color: black;
+  border-width: 3px;
+  border-color: red;
+
+}
+
+.form-field .date-input {
+  width: 200px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+.form-field-one {
+  position: relative;
+
+  margin-bottom: 20px;
+}
+
+.form-label-one {
+position: absolute;
+top: 50%;
+left: 30px;
+
+transform: translateY(-50%);
+transition: transform 250ms linear;
+}
+
+.form-input-one {
+  margin: 0;
+  padding: 10px 20px;
+  font: inherit;
+  border-radius: 3px;
+  border: 1px solid tomato;
+}
+
+
+/* поменяй цвет на красний єлементу которий ідет после тебя когда ти в фокусе  */
+/* .form-input-one:focus + .form-label-one {
+  transform: translateY(-50px);
+  color: red;
+} */
+
+/* вибрать form-lable-one  которий ідет за form-input-one 
+коли у того не показан placeholder та посунь його*/
+.form-input-one:focus + .form-label-one,
+.form-input-one:not(:placeholder-shown) + .form-label-one {
+  transform: translateY(-50px);
+  color: red;
+ 
+}
+/* коли нема фукаса на інпуті, то плейсхолдер показан */
+.form-input-one:placeholder-shown {
+  background-color: red;
 }
 
 /* форма */
