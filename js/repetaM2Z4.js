@@ -88,18 +88,81 @@
 // console.log(calculateTotalPrice([100, 200, 300]));
 // ------------------------------------------------------------------------------
 
-const book = {
-  title: "The Last Kingdom",
-  author: "Bernard Cornwell",
-  genres: ["historical prose", "adventure"],
-  public: true,
-  rating: 8.38,
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   public: true,
+//   rating: 8.38,
+// };
+
+// book.pageCount = 836;
+// book.originalLanguage = "en";
+// book.translations = ["ua", "ru"];
+
+// console.log(book.pageCount); // 836
+// console.log(book.originalLanguage); // "en"
+// console.log(book.translations); // ["ua", "ru"]
+// ----------------------------------------------------------------------------------------
+                              //  Задача 3
+            // Напиши функцию для поимка логина
+      // если логина нет, то возвращает "пользователь не найден"
+      // если логин есть возвращает вывести "пользователь найден"
+// вариант 1 через for of
+const logins = ['no3name', 'mang0d0dj', 'k1w1dabs', 'pol1iskute'];
+// const loginToFind = 'mang0d0dj';
+
+// const message = logins.includes(loginToFind)
+//     ? `Пользователь ${loginToFind} найден`
+//     : `Пользователь ${loginToFind} не найден`
+    
+// console.log(message);
+
+// const findLogin = function (allLogins, loginToFind) {
+//   let messege = `Пользователь ${loginToFind} не найден`;
+
+//   for (const login of allLogins) {
+//     if (login === loginToFind) {
+//       messege = `Пользователь ${loginToFind} найден`;
+//     }
+//   }
+
+//   return messege;
+// };
+
+// console.log(findLogin(logins, 'neNadoPaniki'));
+// console.log(findLogin(logins, 'mang0d0dj'));
+// console.log(findLogin(logins, 'vsePolu4itsya'));
+// console.log(findLogin(logins, 'pol1iskute'));
+
+// делаем модификацию кода 👇🏼👇🏼👇🏼
+
+// const findLogin = function (allLogins, loginToFind) {
+//   for (const login of allLogins) {
+//     if (login === loginToFind) {
+//       return `Пользователь ${loginToFind} найден`;
+//     }
+//   };
+  
+//   return  `Пользователь ${loginToFind} не найден`;
+   
+// };
+
+// console.log(findLogin(logins, 'neNadoPaniki'));
+// console.log(findLogin(logins, 'mang0d0dj'));
+// console.log(findLogin(logins, 'vsePolu4itsya'));
+// console.log(findLogin(logins, 'pol1iskute'));
+
+// вариант 2 
+
+const findLogin = function (allLogins, loginToFind) {
+ return allLogins.includes(loginToFind)
+    ? `Пользователь ${loginToFind} найден`
+    : `Пользователь ${loginToFind} не найден`
+  
 };
 
-book.pageCount = 836;
-book.originalLanguage = "en";
-book.translations = ["ua", "ru"];
-
-console.log(book.pageCount); // 836
-console.log(book.originalLanguage); // "en"
-console.log(book.translations); // ["ua", "ru"]
+console.log(findLogin(logins, 'neNadoPaniki'));
+console.log(findLogin(logins, 'mang0d0dj'));
+console.log(findLogin(logins, 'vsePolu4itsya'));
+console.log(findLogin(logins, 'pol1iskute'));
