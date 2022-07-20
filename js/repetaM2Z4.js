@@ -229,24 +229,151 @@
 // }
 // console.log('invertedString: ', invertedString); 
    
-const changeCase = function (string) {
-    const letters = string.split('');
-    let invertedString = '';
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     let invertedString = '';
 
-    // читаестя так: а это в нижнем регистре есть true верни в верхнем и наоборот  
-    for (const letter of letters) {
-        const isInLowerCase = letter === letter.toLowerCase();
+//     // читаестя так: а это в нижнем регистре есть true верни в верхнем и наоборот  
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
 
-        invertedString += isInLowerCase
-            ? letter.toUpperCase()
-            : letter.toLowerCase();
-    }
+//         invertedString += isInLowerCase
+//             ? letter.toUpperCase()
+//             : letter.toLowerCase();
+//     }
 
-    return invertedString;
-};
+//     return invertedString;
+// };
 
-console.log(changeCase('qwerTY'));
-console.log(changeCase('mAnGo'));
-console.log(changeCase('AjAx'));
+// console.log(changeCase('qwerTY'));
+// console.log(changeCase('mAnGo'));
+// console.log(changeCase('AjAx'));
+// ----------------------------------------------------------------------------------
+        //                     Задача 8
+// напиши функцию slugify которая получает строку и возвращает URL-slug
+//строка состоит только из букв и пробелов
+        //                   решение
+// const titel = 'Top 10 benefits of React framework'
+// // шаг 1 - привести к нижнему регистру 
+// const normolizedTitel = titel.toLowerCase();
+// console.log(normolizedTitel);
+// // шаг 2 - получившуюся строку разбить в массив по пробелу
+// const words = normolizedTitel.split(' '); 
+// console.log(words);
+// // шаг 3 - сшить массив с тирешичками
+// const slug = words.join('-');
+// console.log(slug);
 
-   
+// // то же самое оптимизировать (декларативный код)
+// const slugOptimized = titel.toLowerCase().split(' ').join('-');
+// console.log(slugOptimized);
+
+// const slugify = function (string) {
+//     // const normolizedTitel = string .toLowerCase();
+//     // const words = normolizedTitel.split(' '); 
+//     // const slug = words.join('-');
+//     // // можно записать короче 
+//     // // 👇🏼👇🏼👇🏼
+//    return string.toLowerCase().split(' ').join('-');
+// }
+
+// console.log(slugify('Top 10 benefits of React framework'));
+// console.log(slugify('Top 20 mistakes of writening js code'));
+// console.log(slugify('Top 30 good ideas of the future'));
+// ---------------------------------------------------------------------------------------------
+                        //  Задача 9
+        // работа с псевдомассивом
+// сделать массив из псевдомассива. Arguments - зарезервированное название 
+
+// метод 1 old school
+// const fn = function () {
+//     console.log(arguments);
+
+//     const args = Array.from(arguments);
+
+//     console.log(args);
+
+//     // for (const arg of arguments) {
+//     //     console.log(arg);
+//     // }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// метод 2 
+// при помощи rest ...    ... = Array.from(arguments)
+
+// const fn = function (...args) {
+//     console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+// если у нас первые параметры например строка, то можно их записать в 
+// параметры, а всё остальное в rest 
+
+// const fn = function (a, b, c, ...args) {
+//     console.log(`${a} ${b} ${c}`);
+//     console.log(args);
+// };
+
+// fn('hello', 1, 2, 3);
+// fn('aloha', 1, 2, 3, 4, 5);
+// fn('hi', 1, 2, 3, 4, 5, 6, 7);
+// ---------------------------------------------------------------------------------------------
+                        //  Задача 10
+                  // на операцию ...rest
+ //напищи фукцию add для сложения произвольного кол-ва аргументов (чисел)
+
+// const add = function (...args) { 
+//     console.log(args);
+
+//     let total = 0;
+
+//     for (const arg of args) {
+//         total += arg; 
+//     }
+
+//     return total;
+// };
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4, 5, 6));
+// ---------------------------------------------------------------------------------------------
+                        //  Задача 10
+        // напиши функцию filterNumbers
+    // - первым аргументом принимает массив чисел
+    // - после первого арг может быть произвольно екол-во других арг
+    // - функция должна вернуть новыц массив, в которорм будет только те аргументы которые начинаются со второго
+    //  для которых есть аналог в оригинальнои массиве
+    // то есть вернуть только совпадающие
+    
+// const filterNumbers = function (arrey, ...args) {
+//     console.log('arrey', arrey);
+//     console.log('args', args);
+
+//     const uniqueElement = [];
+
+//     for (const arg of args) {
+//         // console.log(arg);
+//         // console.log(arrey.includes(arg));
+
+//         if (arrey.includes(arg)) {
+//             console.log(`эллемент ${arg} есть`);
+
+//             uniqueElement.push(arg);
+//         }
+//     }
+
+//     // console.log('новый массивэ', uniqueElement);
+
+//     return uniqueElement;
+//  };
+
+// console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); //[2,3]
+// console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30,15]
+// console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); //[200]
