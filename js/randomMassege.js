@@ -9,7 +9,21 @@ let messeges = [
    'Вашій мрії просто нікуди відступати, їй доведеться збутися.',
 ];
 
-// console.log(messeges );
+// JSON.stringify(messeges);
+// console.log(messeges);
+
+// sessionStorage.setItem('my-data', JSON.stringify(messeges)); 
+
+// const savedData = sessionStorage.getItem('my-data');
+// console.log(savedData);
+
+// const parsedData = JSON.parse(savedData);
+// console.log(parsedData);
+
+
+
+
+// код рандомно выбирает сообщение
 
 const maxi = messeges.length -1;
 const mini = 0;
@@ -27,3 +41,8 @@ document.querySelector(".random_message_place").innerHTML = messege;
 // 3 взять параграф 
 // 4 число преобразовать в строку
 // 5 записать в параграф рандомное число (значение - строку) из массива
+
+
+// const template = RollTemplate.compile('<p>{{ messeges }}</p>');
+
+// template({ messeges });
