@@ -4,6 +4,7 @@
 
 body {
   max-width: 1200px;
+  height: 800px;
 }
 
 /* кнопки-ссылки + подчеркивание с анимацией начало */
@@ -449,8 +450,12 @@ transition: transform 250ms linear;
   animation: grow 2s;
   text-align: center;
 
-  background-color: aqua;
-  border: 1px solid black;   
+  /* background-color: aqua; */
+  background-image: url(/images/svitok.jpeg);
+  background-position: 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+      border: 1px solid black;   
 
   animation-name: open;
 }
